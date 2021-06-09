@@ -89,7 +89,17 @@ const config = {
               {
                 label: '节流与防抖',
                 nodePath: 'performance'
-              }
+              },
+              {
+                label: '请求相关',
+                nodePath: 'fetch',
+                children: [
+                  {
+                    nodePath: 'handleAsync',
+                    label: 'handleAsync'
+                  }
+                ],
+              },
             ],
           },
         ],
