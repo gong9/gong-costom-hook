@@ -6,7 +6,7 @@
  * @param promise
  * @return {data,status,error}
  */
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 interface UseAsyncParam<D> {
   data: D | null,
   error: Error | null,
@@ -46,20 +46,22 @@ const useAsync = <D>(initState?: UseAsyncParam<D>) => {
       })
   }
 
-  const run = async (promise) => {
-    setStatus('starting')
-    if (promise.then) {
-      try {
-        await promise.then(res => setData(res))
-        setStatus('success')
-      } catch (error) {
-        setError(error);
-        setStatus('error')
+  const run = useCallback((promise) => {
+    async (promise) => {
+      setStatus('starting')
+      if (promise.then) {
+        try {
+          await promise.then(res => setData(res))
+          setStatus('success')
+        } catch (error) {
+          setError(error);
+          setStatus('error')
+        }
+      } else {
+        throw new Error("请传入 Promise 类型数据");
       }
-    } else {
-      throw new Error("请传入 Promise 类型数据");
     }
-  }
+  }, [])
 
   return {
     status: value.status,

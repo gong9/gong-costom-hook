@@ -1,3 +1,6 @@
 .brand-logo{
   display: none !important;
 }
+.navbar-brand-holder{
+  display: none !important;
+}

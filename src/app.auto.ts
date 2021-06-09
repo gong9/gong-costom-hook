@@ -100,6 +100,16 @@ const config = {
                   }
                 ],
               },
+              {
+                label:'调研状态管理库',
+                nodePath:'statemanagement',
+                children: [
+                  {
+                    nodePath: 'overstated',
+                    label: 'overstated'
+                  }
+                ],
+              }
             ],
           },
         ],
