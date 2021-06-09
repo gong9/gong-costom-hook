@@ -4,6 +4,7 @@
  * '@core/*': '@core/*'
  * '～/*': '/src/*'
  */
+import './app.css'
 
 const config = {
   env: {
@@ -50,7 +51,7 @@ const config = {
         header: {
           showDevItem: false,
           brand: {
-            title: 'gong',
+            title: 'gong custom-hook总结',
             link: {
               title: 'start',
               href: '/',
@@ -76,18 +77,16 @@ const config = {
                 exact: true,
               },
               {
-                path: '/dom',
                 label: 'DOM',
                 nodePath: 'dom',
-                childen: [
+                children: [
                   {
-                    path: '/inputbind',
-                    nodePath: 'inputbind'
+                    nodePath: 'inputbind',
+                    label: 'input 双向绑定'
                   }
-                ]
+                ],
               },
               {
-                path: '/performance',
                 label: '节流与防抖',
                 nodePath: 'performance'
               }
