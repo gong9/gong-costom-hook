@@ -54,7 +54,7 @@ const useAsync = <D>(initState?: UseAsyncParam<D>) => {
           await promise.then(res => setData(res))
           setStatus('success')
         } catch (error) {
-          setError(error);
+          setError(error)
           setStatus('error')
         }
       } else {

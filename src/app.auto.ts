@@ -109,6 +109,16 @@ const config = {
                     label: 'overstated'
                   }
                 ],
+              },
+              {
+                label:'组件相关',
+                nodePath:'someComponement',
+                children: [
+                  {
+                    nodePath: 'model',
+                    label: 'model'
+                  }
+                ],
               }
             ],
           },
